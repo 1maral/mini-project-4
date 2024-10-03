@@ -64,9 +64,13 @@ public class AssociativeArray<K, V> {
    */
   public AssociativeArray<K, V> clone() {
     AssociativeArray<K, V> new_arr = new AssociativeArray<K, V>();
+    while (this.size > new_arr.pairs.length){
+      new_arr.expand();
+    } // while
     for (int i = 0; i < this.size; i++) {
       new_arr.pairs[i] = this.pairs[i].clone();
     } // for
+    System.out.println("array is " + new_arr.toString());
     return new_arr;
   } // clone()
 
@@ -80,7 +84,10 @@ public class AssociativeArray<K, V> {
     for (int i = 0; i < (this.size - 1); i++) {
       to_str += this.pairs[i].toString() + ", ";
     } // for
-    to_str += this.pairs[this.size - 1].toString() + "}";
+    if (this.size > 0) {
+      to_str += this.pairs[this.size - 1].toString();
+    } // if
+    to_str += "}";
     return to_str;
   } // toString()
 

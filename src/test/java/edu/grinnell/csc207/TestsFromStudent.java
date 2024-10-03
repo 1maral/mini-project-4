@@ -20,7 +20,7 @@ import org.junit.jupiter.api.Test;
  */
 public class TestsFromStudent {
   /**
-   * Setting, getting, and removing an empty string key should not throw.
+   * Checking the basic functionality of set, get, and remove methods using string key.
    * 
    * @throws NullKeyException
    */
@@ -28,19 +28,19 @@ public class TestsFromStudent {
   public void baterdeneMaralTest1() throws NullKeyException {
     AssociativeArray<String, String> arr = new AssociativeArray<String, String>();
     // Add an element to the array
-    arr.set("A", "Apple");
+    arr.set("Array", "used to store multiple values in a single variable.");
     // Make sure that it's there.
     try {
-      assertEquals("Apple", arr.get("A"));
+      assertEquals("used to store multiple values in a single variable.", arr.get("Array"));
     } catch (KeyNotFoundException e) {
-      fail("Could not set A to Apple");
+      fail("Could not set Array to the definition");
     }
     // Remove it.
-    arr.remove("A");
+    arr.remove("Array");
     // Make sure it's no longer there.
     try {
       // The following line should throw an exception
-      arr.get("A");
+      arr.get("Array");
       fail("Did not throw an exception");
     } catch (KeyNotFoundException e) {
       // Do nothing
@@ -48,59 +48,45 @@ public class TestsFromStudent {
   } // baterdeneMaralTest1
 
   /**
-   * Setting, getting, and removing an empty string key should not throw.
-   * 
-   * @throws NullKeyException
+   * If a user tries to set a key twice, then update the key to the last value.
+   *
+   * @throws KeyNotFoundException
    */
   @Test
-  public void baterdeneMaralTest1() throws NullKeyException {
+  public void baterdeneMaralTest2() throws NullKeyException {
     AssociativeArray<String, String> arr = new AssociativeArray<String, String>();
     // Add an element to the array
-    arr.set("A", "Apple");
+    arr.set("Array", "not useful.");
     // Make sure that it's there.
     try {
-      assertEquals("Apple", arr.get("A"));
+      assertEquals("not useful.", arr.get("Array"));
     } catch (KeyNotFoundException e) {
-      fail("Could not set A to Apple");
+      fail("Could not set Array to the wrong definition");
     }
-    // Remove it.
-    arr.remove("A");
-    // Make sure it's no longer there.
+    // Add the same key again to the array
+    arr.set("Array", "used to store multiple values in a single variable.");
+    // Make sure that the value has updated.
     try {
-      // The following line should throw an exception
-      arr.get("A");
-      fail("Did not throw an exception");
+      assertEquals("used to store multiple values in a single variable.", arr.get("Array"));
     } catch (KeyNotFoundException e) {
-      // Do nothing
+      fail("Could not update Array to the right definition");
     }
-  } // baterdeneMaralTest1
+  } // baterdeneMaralTest2()
 
   /**
-   * Setting, getting, and removing an empty string key should not throw.
+   * Trying to remove from an empty array should result in nothing.
    * 
    * @throws NullKeyException
    */
   @Test
-  public void baterdeneMaralTest1() throws NullKeyException {
+  public void baterdeneMaralEdge1() throws NullKeyException {
     AssociativeArray<String, String> arr = new AssociativeArray<String, String>();
-    // Add an element to the array
-    arr.set("A", "Apple");
-    // Make sure that it's there.
     try {
-      assertEquals("Apple", arr.get("A"));
-    } catch (KeyNotFoundException e) {
-      fail("Could not set A to Apple");
+      // The following lines should do nothing
+      arr.remove("Array");
+    } catch (Exception e) {
+      fail("Could not remove from an empty array");
     }
-    // Remove it.
-    arr.remove("A");
-    // Make sure it's no longer there.
-    try {
-      // The following line should throw an exception
-      arr.get("A");
-      fail("Did not throw an exception");
-    } catch (KeyNotFoundException e) {
-      // Do nothing
-    }
-  } // baterdeneMaralTest1
+  } // baterdeneMaralEdge1
 
-} // class TestsFromSam
+} // class TestsFromStudent
