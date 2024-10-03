@@ -3,6 +3,8 @@
 
 **Author**
 * Maral Bat-Erdene
+* Samuel A. Rebelsky for starter code
+* CSC207 students for testing
 
 **Notes for the reader**
 
@@ -10,4 +12,4 @@ This project focuses on implementing an associative array, a data structure that
 
 ---
 
-This code may be found at <https://github.com/1maral/mini-project-3>. The original project can be found at <https://github.com/Grinnell-CSC207/mp-blocks-maven>.
+This code may be found at <https://github.com/1maral/mini-project-4>. The original project can be found at <https://github.com/Grinnell-CSC207/mp-blocks-maven>.
