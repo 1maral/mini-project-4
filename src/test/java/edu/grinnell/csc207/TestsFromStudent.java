@@ -47,4 +47,60 @@ public class TestsFromStudent {
     }
   } // baterdeneMaralTest1
 
+  /**
+   * Setting, getting, and removing an empty string key should not throw.
+   * 
+   * @throws NullKeyException
+   */
+  @Test
+  public void baterdeneMaralTest1() throws NullKeyException {
+    AssociativeArray<String, String> arr = new AssociativeArray<String, String>();
+    // Add an element to the array
+    arr.set("A", "Apple");
+    // Make sure that it's there.
+    try {
+      assertEquals("Apple", arr.get("A"));
+    } catch (KeyNotFoundException e) {
+      fail("Could not set A to Apple");
+    }
+    // Remove it.
+    arr.remove("A");
+    // Make sure it's no longer there.
+    try {
+      // The following line should throw an exception
+      arr.get("A");
+      fail("Did not throw an exception");
+    } catch (KeyNotFoundException e) {
+      // Do nothing
+    }
+  } // baterdeneMaralTest1
+
+  /**
+   * Setting, getting, and removing an empty string key should not throw.
+   * 
+   * @throws NullKeyException
+   */
+  @Test
+  public void baterdeneMaralTest1() throws NullKeyException {
+    AssociativeArray<String, String> arr = new AssociativeArray<String, String>();
+    // Add an element to the array
+    arr.set("A", "Apple");
+    // Make sure that it's there.
+    try {
+      assertEquals("Apple", arr.get("A"));
+    } catch (KeyNotFoundException e) {
+      fail("Could not set A to Apple");
+    }
+    // Remove it.
+    arr.remove("A");
+    // Make sure it's no longer there.
+    try {
+      // The following line should throw an exception
+      arr.get("A");
+      fail("Did not throw an exception");
+    } catch (KeyNotFoundException e) {
+      // Do nothing
+    }
+  } // baterdeneMaralTest1
+
 } // class TestsFromSam

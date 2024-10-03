@@ -1,13 +1,6 @@
-Associative Arrays
-==================
-Maral Bat-Erdene
-
-
-_Students must replace the contents of this file with appropriate
-contents, including class, author, date, and URL._
-
 # Project Title: Associative Arrays
 ==================
+
 **Author**
 * Maral Bat-Erdene
 
