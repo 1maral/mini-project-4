@@ -5,10 +5,6 @@ import edu.grinnell.csc207.util.NullKeyException;
 import edu.grinnell.csc207.util.KeyNotFoundException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.fail;
 
 import org.junit.jupiter.api.Test;
@@ -82,8 +78,10 @@ public class TestsFromStudent {
   public void baterdeneMaralEdge1() throws NullKeyException {
     AssociativeArray<String, String> arr = new AssociativeArray<String, String>();
     try {
-      // The following lines should do nothing
+      // Attempt to remove from an empty array
       arr.remove("Array");
+      // Check that size remains 0
+      assertEquals(0, arr.size(), "The empty array is not size of 0");
     } catch (Exception e) {
       fail("Could not remove from an empty array");
     }
